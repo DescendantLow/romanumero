@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+	<title>Roman Numerals to Arabic Numbers</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<script type = "text/javascript" src="backend.js"></script>  
+	<style>
+		center{
+		margin: auto;
+		align-items:center;
+		}
+		
+		h1{
+		font-size: 24px !important;
+		display: inline-block !important;
+		}
+
+	</style>		
+	</head>
+
+	<body>
+	<center>
+		<h1>Roman Numerals to Arabic Numbers</h1>
+		<form action= javascript:romaNumeroToInteger(input.value)>
+		  <label for="Roman Numeral">Roman Numeral:</label> 
+		  <input type="text" id="input" name="input" style="text-transform:uppercase" oninput="this.value = this.value.toUpperCase()">
+		  <input type="submit" value="Convert"><br><br>
+		  <label for="Arabic Number">Arabic Number:</label>  
+		  <input type="text" id="output" name="output" value="" readonly><br><br>
+
+		</form>
+	</center>
+	
+	</body>
+
+</html> 
