@@ -1,0 +1,78 @@
+ <!DOCTYPE html>
+<html>
+	<head>
+	<title>Roman Numerals to Arabic Numbers</title>
+	< <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+	<script defer src="https://pyscript.net/latest/pyscript.js"></script> 
+	<style>
+		center{
+		margin: auto;
+		align-items:center;
+		}
+		
+		h1{
+		font-size: 24px !important;
+		display: inline-block !important;
+		}
+
+	</style>		
+	</head>
+
+	<body>
+	<center>
+		<h1>Roman Numerals to Arabic Numbers</h1>
+		<p>Hello World</p>
+		<table>
+		<tr>
+		<td width="50%">
+			Roman Numeral: <td width="55%"><input id="input" type="text" name="input">
+			<button type="button">Convert</button>
+		</td>
+		</tr>
+		
+		</br>
+		
+		<tr>
+		<td width="10%">
+			Arabic Number: <td width="55%"><input id="output" type="text" name="output">
+		</td>
+		</tr>
+	
+		</table>
+	</center>
+
+	<pyscript>
+			def write_roman(num):
+
+				roman = OrderedDict()
+				roman[1000] = "M"
+				roman[900] = "CM"
+				roman[500] = "D"
+				roman[400] = "CD"
+				roman[100] = "C"
+				roman[90] = "XC"
+				roman[50] = "L"
+				roman[40] = "XL"
+				roman[10] = "X"
+				roman[9] = "IX"
+				roman[5] = "V"
+				roman[4] = "IV"
+				roman[1] = "I"
+
+				def roman_num(num):
+					for r in roman.keys():
+						x, y = divmod(num, r)
+						yield roman[r] * x
+						num -= (r * x)
+						if num <= 0:
+							break
+
+				return "".join([a for a in roman_num(num)])
+				
+			num = 35
+			print (write_roman(num))
+		
+		</pyscript>
+	</body>
+
+</html> 
